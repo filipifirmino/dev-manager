@@ -1,4 +1,4 @@
-# MANAGER-DEV :rocket:
+# DEV-MANAGER :rocket:
 <hr>
 <h3>Descrição deste projeto<h3>
 <hr>
