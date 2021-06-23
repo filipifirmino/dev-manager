@@ -9,5 +9,5 @@ const routes = require('./routes');
 app.use(cors());
 app.use(express.json());
 
-app.get('/', routes)
+app.use('/', routes)
 app.listen(port, () => console.log(`Server listen port ${port}`));
