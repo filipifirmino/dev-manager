@@ -12,13 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.Developer.belongsToMany(models.Technologies, {
-        as: 'technologies',
+        as: 'tecId',
         through: Developer,
         foreignKey: 'id',
         otherKey: 'id',
       });
       models.Technologies.belongsToMany(models.Developer, {
-        as:'developer',
+        as:'devId',
         through: Technologies,
         foreignKey: 'id',
         otherKey: 'id',
