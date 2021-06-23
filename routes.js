@@ -2,9 +2,9 @@ const express = require('express');
 
 const routes = express();
 
-routes.get('/', (_req, res) => {
-    res.json('Welcome to Dev Manager!');
-});
+const {getAllTechnologies} = require('./src/controllers')
+
+routes.get('/', getAllTechnologies);
 
 routes.get('/developer', (_req, res) => {
     res.json('Get All Developers');
