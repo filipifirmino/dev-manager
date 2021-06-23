@@ -15,13 +15,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Developer.init({
-    name: DataTypes.STRING,
+    nome: DataTypes.STRING,
     fone: DataTypes.STRING,
     celular: DataTypes.STRING,
     endereco: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Developer',
+    timestamps: false,
   });
   return Developer;
 };
