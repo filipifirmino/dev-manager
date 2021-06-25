@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Developers.belongsTo(models.DeveloperTechnologies, {foreignKey:'id', as:'devId'});
+      // Developers.belongsTo(models.DeveloperTechnologies, {foreignKey:'id', as:'devId'});
     }
   };
   Developers.init({
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     endereco: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Developer',
+    modelName: 'Developers',
     timestamps: false,
   });
   return Developers;
