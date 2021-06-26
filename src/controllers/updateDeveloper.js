@@ -6,11 +6,16 @@ const updateDeveloper = async (req, res) => {
 
   try {
     Developers.update({ nome, fone, celular, endereco }, { where: { id: id } });
+    DeveloperTechnologies.destroy({ where: { devId: id } });
+
     tecnologias.forEach((actual) => {
-      DeveloperTechnologies.update({ tecId: actual }, { where: { devId: id } });
+      DeveloperTechnologies.create({ devId: id, tecId: actual });
     });
-    return res.status(200).json({message: "successfully!"})
-  } catch (error) { res.status(403).json({message: "Failure delete"})}
+    
+    return res.status(200).json({ message: "successfully!" });
+  } catch (error) {
+    res.status(403).json({ message: "Failure delete" });
+  }
 };
 
 module.exports = {
