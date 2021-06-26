@@ -3,13 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  
-  // sequelize.query('CREATE TRIGGER delete_relationship AFTER DELETE ON developers' +
-  //    ' FOR EACH ROW' +
-  //    ' BEGIN' +
-  //    ' DELETE FROM DeveloperTechnologies WHERE devId = developers.id' +
-  //    'END;');
-  class Developers extends Model {
+    class Developers extends Model {
     
     /**
      * Helper method for defining associations.
@@ -19,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       // define association here
-      // Developers.belongsTo(models.DeveloperTechnologies, {foreignKey:'id', as:'devId'});
     }
   };  
 

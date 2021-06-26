@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // Technologies.belongsTo(models.DeveloperTechnologies, {foreignKey:'id', as:'especialidade'});
     }
   };
   Technologies.init({
