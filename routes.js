@@ -1,22 +1,37 @@
-const express = require('express');
+const express = require("express");
+const { body } = require("express-validator");
 
 const routes = express();
 
-const {getAllTechnologies, getAllDevelopers, createDeveloper} = require('./src/controllers')
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger_output.json')
 
-routes.get('/', getAllTechnologies);
+const REGEX_CEP = /^[0-9]{2}[0-9]{3}-[0-9]{3}$/;
 
-routes.get('/developer', getAllDevelopers);
+const {
+  getAllTechnologies,
+  getAllDevelopers,
+  createDeveloper,
+  updateDeveloper,
+  deleteDeveloper,
+} = require("./src/controllers");
 
-routes.post('/developer', createDeveloper)
+routes.get('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-routes.put('/developer/:id', (_req, res) => {
-    res.json('Update Developer');
-})
+routes.get("/", getAllTechnologies);
 
-routes.delete('/developer/:id', (_req, res) => {
-    res.json('Delete developer');
-})
+routes.get("/developer", getAllDevelopers);
 
+routes.post(
+  "/developer",
+  body("nome").isString().isLength({ max: 120 }),
+  body("tecnologias").isArray({ min: 2 }),
+  body("cep").matches(REGEX_CEP).isLength({ min: 9, max: 9 }),
+  createDeveloper
+);
 
-module.exports = routes
+routes.put("/developer/:id", updateDeveloper);
+
+routes.delete("/developer/:id", deleteDeveloper);
+
+module.exports = routes;
