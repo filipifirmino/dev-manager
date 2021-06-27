@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "nodemon index.js",
     "createDb": "npx sequelize-cli db:create && npx sequelize-cli db:migrate $",
-    "seeders": "npx sequelize-cli db:seed:all"
+    "seeders": "npx sequelize-cli db:seed:all",
+    "swagger-autogen": "node swagger.js"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +22,6 @@
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.7",
     "sequelize": "^6.6.2",
-    "sequelize-cli": "^6.2.0",
-    "swagger-ui-express": "^4.1.6"
+    "sequelize-cli": "^6.2.0"
   }
 }

@@ -3,9 +3,6 @@ const { body } = require("express-validator");
 
 const routes = express();
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerFile = require('./swagger_output.json')
-
 const REGEX_CEP = /^[0-9]{2}[0-9]{3}-[0-9]{3}$/;
 
 const {
@@ -16,7 +13,6 @@ const {
   deleteDeveloper,
 } = require("./src/controllers");
 
-routes.get('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 routes.get("/", getAllTechnologies);
 
