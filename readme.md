@@ -4,7 +4,7 @@
  * Este projeto consiste em uma API REST (CRUD) em nodeJS, express, mysql e sequelize.</br>
 ---
 ### Como instalar
-* Clone este repositorio: git@github.com:ic3web/dev-manager.git
+* Clone este repositorio: `git@github.com:ic3web/dev-manager.git`
 * Execute: npm install
 * Execute: npm run createDb
 * Execute: npm run seeders
