@@ -25,11 +25,8 @@
     "nodemon": "^2.0.7",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0",
-<<<<<<< HEAD
-    "shelljs": "^0.8.4"
-=======
+    "shelljs": "^0.8.4",
     "swagger-autogen": "^2.10.1",
     "swagger-ui-express": "^4.1.6"
->>>>>>> 6797248c7fea384302b1120dded8817ff234582e
   }
 }
