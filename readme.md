@@ -11,7 +11,7 @@
 <hr>
 <h3>Mais informações<h3>
 Rotas:
-```
+```javascript
 '/' => lista todas as tecnologias disponíveis;
 '/developer' => lista todos os desenvolvedores cadastrados;
 '/developer?id=value' => lista todos os desenvolvedores cadastrados por id;
