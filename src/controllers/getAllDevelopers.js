@@ -63,7 +63,8 @@ const getAllDevelopers = async (req, res) => {
       result.map((actual, index) => actual.especialidade = getTools[index]);
       return res.status(200).json(result)
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err));  
+  
 };
 
 module.exports = {

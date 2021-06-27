@@ -17,7 +17,6 @@ const updateDeveloper = async (req, res) => {
     res.status(403).json({ message: "Failure delete" });
   }
 };
-
 module.exports = {
   updateDeveloper,
 };

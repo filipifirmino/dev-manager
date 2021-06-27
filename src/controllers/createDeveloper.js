@@ -36,9 +36,11 @@ const createDeveloper = async (req, res) => {
     return res
       .status(201)
       .json({ message: "Successfully registered developer" });
+
   } catch (err) {
     return res.status(403).json({ message: "Failed to register" });
   }
+  
 };
 
 module.exports = {
