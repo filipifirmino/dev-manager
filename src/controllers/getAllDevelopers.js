@@ -14,6 +14,7 @@ const getDeveloperByFilter = async (filter) => {
     where: filter
   })
     .then((response) => {
+      console.log(response);
       const result = JSON.parse(JSON.stringify(response));
       const getTools = result.map((actual) => actual.especialidade.map((acc) => acc.name));
       result.map((actual, index) => actual.especialidade = getTools[index]);
@@ -21,6 +22,27 @@ const getDeveloperByFilter = async (filter) => {
     })
     .catch((err) => console.log(err));
 }
+
+const getDeveloperByTecnologie = async (tecnologieName) => {
+  return Developers.findAll({
+    include: {
+      model: Technologies, 
+      as: "especialidade", 
+      attributes: ["name"],
+      raw : true, 
+      where: {name:tecnologieName}
+    }    
+  })
+    .then((response) => {
+      console.log(response);
+      const result = JSON.parse(JSON.stringify(response));
+      const getTools = result.map((actual) => actual.especialidade.map((acc) => acc.name));
+      result.map((actual, index) => actual.especialidade = getTools[index]);
+      return result
+    })
+    .catch((err) => console.log(err));
+}
+
 
 const getAllDevelopers = async (req, res) => {
 
@@ -41,12 +63,16 @@ const getAllDevelopers = async (req, res) => {
       const resultByCelular = await getDeveloperByFilter({ celular : param.celular });
       res.status(200).json(resultByCelular);
       break;
+    case 'fone':
+      const resultByFone = await getDeveloperByFilter({ fone : param.fone });
+      res.status(200).json(resultByFone);
+      break;
     case 'endereco':
       const resultByEndereco = await getDeveloperByFilter({ endereco : param.endereco });
       res.status(200).json(resultByEndereco);
       break;
     case 'especialidade':
-      const resultByespecialidade = await getDeveloperByFilter({ especialidade : param.especialidade });
+      const resultByespecialidade = await getDeveloperByTecnologie(param.especialidade);
       res.status(200).json(resultByespecialidade);
       break;
     default:

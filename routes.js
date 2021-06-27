@@ -16,7 +16,7 @@ const {
 
 routes.get("/", getAllTechnologies);
 
-routes.get("/developer/:id?/:nome?/:celular?/:endereco?/:especialidade?", getAllDevelopers);
+routes.get("/developer/:id?/:nome?/:celular?/:fone?/:endereco?/:especialidade?", getAllDevelopers);
 
 // routes.get("/developers", getDeveloperByParam)
 
