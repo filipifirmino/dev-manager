@@ -13,23 +13,9 @@ const {
   deleteDeveloper,
 } = require("./src/controllers");
 
-
 routes.get("/", getAllTechnologies);
 
 routes.get("/developer/:id?/:nome?/:celular?/:fone?/:endereco?/:especialidade?", getAllDevelopers);
-
-// routes.get("/developers", getDeveloperByParam)
-
-// app.get('/developer', function(req, res) {
-// let id = req.query.year; //either a value or undefined
-// let nome = req.query.month;
-// let fone = req.query.day;
-// let celular = req.query.celular;
-// let endereco = req.query.celular;
-// let especialidade = req.query.celular;
-// }
-
-
 
 
 routes.post(

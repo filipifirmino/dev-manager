@@ -22,7 +22,6 @@ const updateDeveloper = async (req, res) => {
     res.status(403).json({ message: "Failure update" });
   }
 };
-
 module.exports = {
   updateDeveloper,
 };

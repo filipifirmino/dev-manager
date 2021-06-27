@@ -14,7 +14,6 @@ const deleteDeveloper = async (req, res) => {
     res.status(403).json({ message: "Failed to delete developer" });
   }
 };
-
 module.exports = {
   deleteDeveloper,
 }
