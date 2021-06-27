@@ -1,10 +1,10 @@
-const { Developer, DeveloperTechnologies } = require("../models");
+const { Developers, DeveloperTechnologies } = require("../models");
 
 const deleteDeveloper = async (req, res) => {
   const { id } = req.params;
 
   try {
-    Developer.destroy({ where: { id: id } });
+    Developers.destroy({ where: { id : id } });
     DeveloperTechnologies.destroy({where: {devId: id}});
     res.status(200).json({ message: "successfully deleted" });
   } catch (error) {
