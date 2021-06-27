@@ -21,7 +21,7 @@
     "/": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "Endpoint para obter todas as tecnologias disponiveis",
         "parameters": [],
         "responses": {
           "200": {
@@ -32,32 +32,48 @@
     },
     "/developer/{id?}/{nome?}/{celular?}/{endereco?}/{especialidade?}": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": ["developer"],
+        "description": "Endpoint para obter todos os dev's cadastrados, há possibilidade de filtrar atraves dos parametros opcionais",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/developer": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": ["developer"],
+        "description": "Endpoint para cadastrar um novo dev no banco",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "201": {
+            "description": "Successfully registered developer"
+          }
+        }
       }
     },
     "/developer/{id}": {
       "put": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
+        "tags": ["developer"],
+        "description": "Endpoint para atualizar dados de um dev cadastrado usando como parametro de busca o id",
+        "parameters": ["id"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "delete": {
         "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
+        "description": "EndPoint para deletar um dev cadastrado no banco",
+        "parameters": ["id"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },
