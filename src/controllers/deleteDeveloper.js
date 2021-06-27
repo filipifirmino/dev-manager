@@ -5,7 +5,10 @@ const deleteDeveloper = async (req, res) => {
 
   try {
     Developers.destroy({ where: { id : id } });
-    DeveloperTechnologies.destroy({where: {devId: id}});
+    const result = await DeveloperTechnologies.destroy({where: {devId: id}});
+    if(result === 0) {
+      res.status(400).json({ message: "Failed to delete developer" });
+    } 
     res.status(200).json({ message: "successfully deleted" });
   } catch (error) {
     res.status(403).json({ message: "Failed to delete developer" });

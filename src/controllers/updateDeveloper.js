@@ -5,16 +5,21 @@ const updateDeveloper = async (req, res) => {
   const { id } = req.params;
 
   try {
-    Developers.update({ nome, fone, celular, endereco }, { where: { id: id } });
-    DeveloperTechnologies.destroy({ where: { devId: id } });
+    const result = await Developers.update({ nome, fone, celular, endereco }, { where: { id: id } });
+    
+    if(result[0] === 0){
+      res.status(400).json({message: "Unregistered user"});
+    }
 
+    DeveloperTechnologies.destroy({ where: { devId: id } });
+   
     tecnologias.forEach((actual) => {
       DeveloperTechnologies.create({ devId: id, tecId: actual });
     });
     
     return res.status(200).json({ message: "successfully!" });
   } catch (error) {
-    res.status(403).json({ message: "Failure delete" });
+    res.status(403).json({ message: "Failure update" });
   }
 };
 
