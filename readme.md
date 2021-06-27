@@ -1,16 +1,16 @@
 # DEV-MANAGER :rocket:
-<hr>
-<h3>Descrição deste projeto<h3>
-  Este projeto consiste em uma API REST (CRUD) em nodeJS, express, mysql e sequelize.</br>
-<hr>
-<h3>Como instalar<h3>
-<li>Clone este repositorio: git@github.com:ic3web/dev-manager.git</li>
-<li>Execute: npm install</li>
-<li>Execute: npm run createDb</li>
-<li>Execute: npm run seeders</li>
-<hr>
-<h3>Mais informações<h3>
-Rotas:
+---
+### Descrição deste projeto
+ * Este projeto consiste em uma API REST (CRUD) em nodeJS, express, mysql e sequelize.</br>
+---
+### Como instalar
+* Clone este repositorio: git@github.com:ic3web/dev-manager.git
+* Execute: npm install
+* Execute: npm run createDb
+* Execute: npm run seeders
+---
+### Mais informações
+> Rotas:
 ```javascript
 '/' => lista todas as tecnologias disponíveis;
 '/developer' => lista todos os desenvolvedores cadastrados;
